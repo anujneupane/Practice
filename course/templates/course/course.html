@@ -1,0 +1,42 @@
+{% comment %} {%  extends 'core/base.html' %} {% endcomment %}
+
+{% comment %} {% load static %}
+
+{% block core_css%}
+<link rel="stylesheet" href="{% static 'course/css/course.css' %}">
+{% endblock %}
+
+{%  block title %}
+ Course Page
+  {% endblock %}
+
+{%  block data %} 
+<h2>This is Course Page <br>
+   {{stu}}
+</h2>
+ {% endblock %} {% endcomment %}
+<style>
+  td,th{
+    border : 3px solid black,
+  }
+</style>
+
+
+ <h2>{{stu}}</h2>
+ <table>
+  <tr>
+    <th> Id </th>
+    <th> Stu Id</th>
+    <th> Stu Name</th>
+    <th> Stu Email</th>
+    <th> Stu Password</th>
+  </tr>
+  {% for st in stu %}
+  <tr>
+    <td>{{st.id}}</td>
+    <td>{{st.stuid}}</td>
+    <td>{{st.stuname}}</td>
+    <td>{{st.stumail}}</td>
+    <td>{{st.stupass}}</td>
+  </tr>
+  {% endfor %}
