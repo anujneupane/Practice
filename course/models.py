@@ -8,5 +8,5 @@ class Student(models.Model):
     stumail = models.EmailField(max_length=70)
     stupass = models.CharField(max_length=70)
 
-    def __str__(self):
-        return self.stuname
+    # def __str__(self):
+    #     return self.stuname
