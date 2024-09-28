@@ -1,15 +1,24 @@
 from django.shortcuts import render
 from course.models import Student
-# Create your views here.
-# def course(request):
-#     return (request, 'course/course.html')
+from . forms import StudentsRegis
 
 def studentInfo(request):
     stud = Student.objects.all()
-    for s in stud:
-        print(s)
-    print('myoutput',stud)
     return render(request,'course/course.html', {'stu':stud})
+
+def showformdata(request):
+    fm=StudentsRegis()
+    return render(request,'course/form.html',{'form':fm})
+
+
+
+
+
+
+
+# Create your views here.
+# def course(request):
+#     return (request, 'course/course.html')
 
 # def combine(request):
 #     a = course()

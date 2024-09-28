@@ -1,21 +1,4 @@
-{% comment %} {%  extends 'core/base.html' %} {% endcomment %}
-
-{% comment %} {% load static %}
-
-{% block core_css%}
-<link rel="stylesheet" href="{% static 'course/css/course.css' %}">
-{% endblock %}
-
-{%  block title %}
- Course Page
-  {% endblock %}
-
-{%  block data %} 
-<h2>This is Course Page <br>
-   {{stu}}
-</h2>
- {% endblock %} {% endcomment %}
-<style>
+ <style>
   td,th{
     border : 3px solid black,
   }
@@ -40,3 +23,6 @@
     <td>{{st.stupass}}</td>
   </tr>
   {% endfor %}
+
+
+
