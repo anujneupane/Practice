@@ -8,9 +8,10 @@ def studentInfo(request):
 
 def showformdata(request):
     fm=StudentsRegis()
+
     return render(request,'course/form.html',{'form':fm})
 
-
+  
 
 
 

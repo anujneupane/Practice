@@ -7,22 +7,25 @@
 
  <h2>{{stu}}</h2>
  <table>
-  <tr>
-    <th> Id </th>
-    <th> Stu Id</th>
-    <th> Stu Name</th>
-    <th> Stu Email</th>
-    <th> Stu Password</th>
-  </tr>
-  {% for st in stu %}
-  <tr>
-    <td>{{st.id}}</td>
-    <td>{{st.stuid}}</td>
-    <td>{{st.stuname}}</td>
-    <td>{{st.stumail}}</td>
-    <td>{{st.stupass}}</td>
-  </tr>
-  {% endfor %}
+    <tr>
+  
+      <th> Stu Id</th>
+      <th> Stu Name</th>
+      <th> Stu Email</th>
+      <th> Stu Password</th>
+    </tr>
+
+    {% for st in stu %}
+      <tr>
+        
+        <td>{{st.stuid}}</td>
+        <td>{{st.stuname}}</td>
+        <td>{{st.stumail}}</td>
+        <td>{{st.stupass}}</td>
+      </tr>
+    {% endfor %}
+    
+</table>
 
 
 
