@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from course.models import Student
 from . forms import StudentsRegis
+from . forms import StudentsRegistration
 
 def studentInfo(request):
     stud = Student.objects.all()
@@ -10,6 +11,11 @@ def showformdata(request):
     fm=StudentsRegis()
 
     return render(request,'course/form.html',{'form':fm})
+
+def showformloop(request):
+    fm=StudentsRegistration()
+
+    return render(request,'course/form2.html',{'form':fm})
 
   
 

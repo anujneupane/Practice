@@ -6,5 +6,6 @@ urlpatterns = [
 
     path('course/', views.studentInfo),
     path('aa/', views.showformdata),
+    path('aaa/', views.showformloop),
     
 ]
