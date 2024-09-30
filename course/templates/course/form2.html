@@ -11,8 +11,7 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <form action="" method="post">
-            {% csrf_token %}
+        <form action="" method="get">
             {% for field in form.visible_fields %}
             {{field.label_tag}}
             {{field}} <br>
