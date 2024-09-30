@@ -13,9 +13,18 @@ def showformdata(request):
     return render(request,'course/form.html',{'form':fm})
 
 def showformloop(request):
-    fm=StudentsRegistration()
-
-    return render(request,'course/form2.html',{'form':fm})
+    if request.method == 'POST':
+        fm = StudentsRegistration(request.POST)
+        if fm.is_valid():
+            print('Form validated')
+            print('name:',fm.cleaned_data ['name'])
+            print('email:',fm.cleaned_data ['email'])
+            print('mobile:',fm.cleaned_data ['mobile'])
+         
+        else:
+            fm = StudentsRegistration()
+        
+        return render(request,'course/form2.html',{'form':fm})
 
   
 
