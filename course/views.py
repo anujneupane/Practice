@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from course.models import Student
-from . forms import StudentsRegis
-from . forms import StudentsRegistration
+from . forms import StudentsRegis , StudentsRegistration
+
+
 
 def studentInfo(request):
     stud = Student.objects.all()
