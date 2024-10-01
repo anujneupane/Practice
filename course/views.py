@@ -24,8 +24,9 @@ def showformloop(request):
          
         else:
             fm = StudentsRegistration()
+    fm = StudentsRegistration()
         
-        return render(request,'course/form2.html',{'form':fm})
+    return render(request,'course/form2.html',{'form':fm})
 
   
 
