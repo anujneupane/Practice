@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from course.models import Student
+from django.http import HttpResponseRedirect
 from . forms import StudentsRegis , StudentsRegistration
 
 
-
+def done(request):
+    return render(request,'course/output.html')
+    
 def studentInfo(request):
     stud = Student.objects.all()
     return render(request,'course/course.html', {'stu':stud})
@@ -21,7 +24,7 @@ def showformloop(request):
             print('name:',fm.cleaned_data ['name'])
             print('email:',fm.cleaned_data ['email'])
             print('mobile:',fm.cleaned_data ['mobile'])
-            return render(request,'course/output.html',{'nm':fm.cleaned_data ['name']})
+            return HttpResponseRedirect('/cor/gg',{'nm':fm.cleaned_data ['name']})
          
         else:
             fm = StudentsRegistration()
