@@ -4,12 +4,12 @@ class StudentsRegis(forms.Form):
     email = forms.EmailField()
 
 class StudentsRegistration(forms.Form):
-    name = forms.CharField(min_length=4)
+    name = forms.CharField(min_length=3)
     email = forms.EmailField()
     mobile= forms.IntegerField()
    
 
-
+g
 
 
 # widget=forms.TextInput(attrs={'id':'form-control'})
