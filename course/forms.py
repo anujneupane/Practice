@@ -4,7 +4,7 @@ class StudentsRegis(forms.Form):
     email = forms.EmailField()
 
 class StudentsRegistration(forms.Form):
-    name = forms.CharField()
+    name = forms.CharField(min_length=4)
     email = forms.EmailField()
     mobile= forms.IntegerField()
    
