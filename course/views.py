@@ -23,7 +23,6 @@ def showformloop(request):
             print('Form validated')
             print('name:',fm.cleaned_data ['name'])
             print('email:',fm.cleaned_data ['email'])
-            print('mobile:',fm.cleaned_data ['mobile'])
             return HttpResponseRedirect('/cor/gg',{'nm':fm.cleaned_data ['name']})
          
         else:
