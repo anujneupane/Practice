@@ -1,12 +1,13 @@
 from django import forms 
 from django.core import validators
-class StudentsRegis(forms.Form):
-    name = forms.CharField(min_length = 3)
-    email = forms.EmailField()
+ 
+def start_with_a(value):
+    if value[0] != 'a':
+        raise forms.ValidationError('Name must be started with a')
 
 class StudentsRegistration(forms.Form):
-    name = forms.CharField(validators=[validators.MaxLengthValidator(10)])
-    email = forms.EmailField()
+     name = forms.CharField(validators = [start_with_a])
+     email = forms.EmailField()
    
  
         

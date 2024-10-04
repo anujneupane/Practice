@@ -1,20 +1,11 @@
 from django.shortcuts import render
 from course.models import Student
-from django.http import HttpResponseRedirect
-from . forms import StudentsRegis , StudentsRegistration
+from . forms import  StudentsRegistration
 
-
-def done(request):
-    return render(request,'course/output.html')
     
 def studentInfo(request):
     stud = Student.objects.all()
     return render(request,'course/course.html', {'stu':stud})
-
-def showformdata(request):
-    fm=StudentsRegis()
-
-    return render(request,'course/form.html',{'form':fm})
 
 def showformloop(request):
     if request.method == 'POST':
@@ -23,11 +14,9 @@ def showformloop(request):
             print('Form validated')
             print('name:',fm.cleaned_data ['name'])
             print('email:',fm.cleaned_data ['email'])
-            return HttpResponseRedirect('/cor/gg',{'nm':fm.cleaned_data ['name']})
-         
-        else:
             fm = StudentsRegistration()
-    fm = StudentsRegistration()
+    else:
+        fm = StudentsRegistration() #form for GET request
         
     return render(request,'course/form2.html',{'form':fm})
 
